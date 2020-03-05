@@ -9,8 +9,13 @@
     <h1><%= title %></h1>
     
     <% for(let lead of leads){ %>
-      <p><%= lead.email %></p>
+      <p>
+        <span><%= lead.email %></span>
+        <a href="/lead/<%= lead.id %>"> Details </a>
+      </p>
     <% } %>
  
+    <a href="/">Return Home</a>
+    
   </body>
 </html>

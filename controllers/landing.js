@@ -11,6 +11,16 @@ exports.show_leads = (req, res, next) => {
   });
 };
 
+exports.show_individualLead = (req, res, next) => {
+  return models.Lead.findOne({
+    where: {
+      id: req.params.lead_id
+    }
+  }).then(lead => {
+    res.render('individual_lead', { lead: lead });
+  });
+};
+
 /* POST callbacks */
 exports.submit_lead = (req, res, next) => {
   return models.Lead.create({
