@@ -16,4 +16,7 @@ router.get('/lead/:lead_id', landing.get_individualLead);
 router.get('/lead/:lead_id/edit', landing.get_updateLead);
 router.post('/lead/:lead_id/edit', landing.update_lead);
 
+/* POST for delete lead */
+router.post('/lead/:lead_id/delete', landing.delete_lead);
+
 module.exports = router;
