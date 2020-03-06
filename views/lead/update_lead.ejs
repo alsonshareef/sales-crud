@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+
+    <h1><%= title %></h1>
+    <form action="/lead/<%= lead.id %>/edit" method="POST">
+      <input
+        type="email"
+        name="lead_email"
+        id="email"
+        placeholder="Email address"
+        value="<%= lead.email %>"
+      />
+      <button type="submit">Save</button>
+    </form>
+ 
+  </body>
+</html>

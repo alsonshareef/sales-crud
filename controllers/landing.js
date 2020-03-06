@@ -21,9 +21,30 @@ exports.get_individualLead = (req, res, next) => {
   });
 };
 
-exports.get_updateLead = (req, res, next) => {};
+exports.get_updateLead = (req, res, next) => {
+  return models.Lead.findOne({
+    where: {
+      id: req.params.lead_id
+    }
+  }).then(lead => {
+    res.render('lead/update_lead', { title: 'Update lead', lead: lead });
+  });
+};
 
-exports.update_lead = (req, res, next) => {};
+exports.update_lead = (req, res, next) => {
+  return models.Lead.update(
+    {
+      email: req.body.lead_email
+    },
+    {
+      where: {
+        id: req.params.lead_id
+      }
+    }
+  ).then(result => {
+    res.redirect(`/lead/${req.params.lead_id}`);
+  });
+};
 
 /* POST callbacks */
 exports.post_lead = (req, res, next) => {
