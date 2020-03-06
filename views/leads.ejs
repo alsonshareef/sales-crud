@@ -9,13 +9,15 @@
     <h1><%= title %></h1>
     
     <% for(let lead of leads){ %>
-      <p>
+      <p id="<%= lead.id %>">
         <span><%= lead.email %></span>
         <a href="/lead/<%= lead.id %>"> Details </a>
+        <button onclick="deleteLead('<%= lead.id %>')">Delete</button>
       </p>
     <% } %>
  
-    <a href="/">Return Home</a>
-    
+    <a id="home_link" href="/">Return Home</a>
+
+    <script src="/javascripts/leads.js"></script>
   </body>
 </html>
