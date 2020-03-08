@@ -17,7 +17,7 @@ exports.post_lead = (req, res, next) => {
 /* READ callbacks */
 exports.get_leads = (req, res, next) => {
   return models.Lead.findAll().then(leads => {
-    res.render('leads', { title: 'Leads', leads: leads });
+    res.render('lead/leads', { title: 'Leads', leads: leads });
   });
 };
 
@@ -27,7 +27,7 @@ exports.get_individualLead = (req, res, next) => {
       id: req.params.lead_id
     }
   }).then(lead => {
-    res.render('individual_lead', { lead: lead });
+    res.render('lead/individual_lead', { lead: lead });
   });
 };
 
