@@ -5,6 +5,16 @@ exports.get_landing = (req, res, next) => {
   res.render('landing', { title: 'Express' });
 };
 
+/* CREATE callbacks */
+exports.post_lead = (req, res, next) => {
+  return models.Lead.create({
+    email: req.body.lead_email
+  }).then(lead => {
+    res.redirect('/leads');
+  });
+};
+
+/* READ callbacks */
 exports.get_leads = (req, res, next) => {
   return models.Lead.findAll().then(leads => {
     res.render('leads', { title: 'Leads', leads: leads });
@@ -21,6 +31,7 @@ exports.get_individualLead = (req, res, next) => {
   });
 };
 
+/* UPDATE callbacks */
 exports.get_updateLead = (req, res, next) => {
   return models.Lead.findOne({
     where: {
@@ -46,15 +57,7 @@ exports.update_lead = (req, res, next) => {
   });
 };
 
-/* POST callbacks */
-exports.post_lead = (req, res, next) => {
-  return models.Lead.create({
-    email: req.body.lead_email
-  }).then(lead => {
-    res.redirect('/leads');
-  });
-};
-
+/* DELETE callbacks */
 exports.delete_lead = (req, res, next) => {
   return models.Lead.destroy({
     where: {
