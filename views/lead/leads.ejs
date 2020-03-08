@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <%- include('../layout/navigation.ejs') %>
+
+    <h1><%= title %></h1>
+    
+    <div class="container py-6">
+      <table class="table-auto">
+          <thead>
+            <th class="px-4 py-2">Email</th>
+            <th class="px-4 py-2">Actions</th>
+          </thead>
+          <tbody>
+            <% for(let lead of leads){ %>
+              <tr id="<%= lead.id %>">
+                <td class="border px-4 py-2">
+                  <span><%= lead.email %></span>
+                </td>
+                <td class="border px-4 py-2">
+                  <a href="/lead/<%= lead.id %>"> Details </a>
+                </td>
+                <td class="border px-4 py-2">
+                  <button onclick="deleteLead('<%= lead.id %>')">Delete</button>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+      </table>  
+    </div>
+
+    <script src="/javascripts/leads.js"></script>
+  </body>
+</html>
