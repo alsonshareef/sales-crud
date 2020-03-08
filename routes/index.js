@@ -19,7 +19,4 @@ router.post('/lead/:lead_id/edit', landingControllers.update_lead);
 /* POST for delete lead */
 router.post('/lead/:lead_id/delete', landingControllers.delete_lead);
 
-/* Will delete the paragraph but don't know how to reload page automatically to show list of leads after lead is deleted. */
-router.post('/lead/:lead_id/delete-json', landingControllers.delete_lead_json);
-
 module.exports = router;
