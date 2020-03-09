@@ -2,6 +2,7 @@ const models = require('../models');
 
 /* GET callbacks */
 exports.get_landing = (req, res, next) => {
+  // username is stored in /req.user.dataValues.email/ when user is logged in
   res.render('landing', { title: 'Express' });
 };
 
