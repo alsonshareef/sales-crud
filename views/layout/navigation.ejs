@@ -4,12 +4,34 @@
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="text-sm lg:flex-grow">
-      <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-        Home
-      </a>
-      <a href="/leads" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-        Leads
-      </a>
+      <ul>
+        <li>
+          <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/leads" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Leads
+          </a>
+        </li>
+        <li>
+          <a href="/signup" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Sign up
+          </a>
+        </li>
+        <li> <!-- Would like to be able to pass logged in email to this spot but ejs keeps breaking. --> </li>
+        <li>
+          <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Login
+          </a>
+        </li>
+        <li>
+          <a href="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Logout
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
