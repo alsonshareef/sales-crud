@@ -10,6 +10,9 @@ router.get('/signup', userControllers.show_signup);
 router.post('/login', userControllers.login);
 router.post('/signup', userControllers.signup);
 
+router.post('/logout', userControllers.logout);
+router.get('/logout', userControllers.logout);
+
 /* GET home landing page. */
 router.get('/', landingControllers.get_landing);
 
