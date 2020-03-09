@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <!-- Would like to conditionally pass logged in username variable to navigation partial without view breaking username doesn't exist (nobody logged in.) -->
     <%- include('./layout/navigation.ejs') %>
 
-    <h1><%= title %></h1>
+    <h1>Home page</h1>
 
     <div class="mx-auto w-full max-w-xs">
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/" method="POST">
