@@ -7,6 +7,9 @@ let landingControllers = require('../controllers/landing');
 router.get('/login', userControllers.show_login);
 router.get('/signup', userControllers.show_signup);
 
+router.post('/login', userControllers.login);
+router.post('/signup', userControllers.signup);
+
 /* GET home landing page. */
 router.get('/', landingControllers.get_landing);
 
