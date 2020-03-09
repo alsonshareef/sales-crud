@@ -1,6 +1,11 @@
 let express = require('express');
 let router = express.Router();
+let userControllers = require('../controllers/user');
 let landingControllers = require('../controllers/landing');
+
+/* AUTHENTICATION */
+router.get('/login', userControllers.show_login);
+router.get('/signup', userControllers.show_signup);
 
 /* GET home landing page. */
 router.get('/', landingControllers.get_landing);
